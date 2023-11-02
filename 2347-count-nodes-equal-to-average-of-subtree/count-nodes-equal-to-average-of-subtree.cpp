@@ -15,7 +15,7 @@ public:
     pair<int,int> traverse(TreeNode* root)
     {
         if(root==NULL)
-         return make_pair(0,0);
+         return make_pair(0,0); //to return pair simple way
         pair<int,int> lp,rp;
         lp= traverse(root->left);
         rp= traverse(root->right);
