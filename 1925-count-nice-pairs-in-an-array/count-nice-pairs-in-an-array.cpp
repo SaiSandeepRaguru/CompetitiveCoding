@@ -11,10 +11,6 @@ public:
          }
          return n;
      }
-     long long nc2(int a)
-     {
-         return ((a%mod*(a-1)%mod)%mod/2)%mod;
-     }
      int countNicePairs(vector<int>& nums) {
         int n=nums.size();
         long long cnt=0;
