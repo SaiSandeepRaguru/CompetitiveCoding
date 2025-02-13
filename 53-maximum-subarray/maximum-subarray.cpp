@@ -1,23 +1,26 @@
 class Solution {
 public:
-    int maxSubArray(vector<int>& nums) {
-        // int maxi=nums[0];
-        // for(int i=0;i<nums.size();i++){
-        //     int csum=0;
-        //     for(int j=i;j<nums.size();j++){
-        //         csum+=nums[j];
-        //         maxi=max(maxi,csum);
-        //     }
-            
-        // }
-        // return maxi;
-
-        int maxi=nums[0], csum=0;
-        for(int i=0;i<nums.size();i++){
-            csum+=nums[i];
-            maxi=max(maxi,csum);
-            csum=max(csum,0);
+    int divide(int start,int end,vector<int> &nums){
+        if(start==end){
+            return nums[start];
         }
-        return maxi;
+        int mid=(start+end)/2;
+        int lmax=divide(start,mid,nums);
+        int rmax=divide(mid+1,end,nums);
+        int lmaxi=INT_MIN,rmaxi=INT_MIN,cl=0,rl=0;
+        for(int i=mid;i>=start;i--){
+            cl+=nums[i];
+            lmaxi=max(lmaxi,cl);
+        }
+        for(int i=mid+1;i<=end;i++){
+            rl+=nums[i];
+            rmaxi=max(rmaxi,rl);
+        }
+        return max(lmax,max(rmax,lmaxi+rmaxi));
+    }
+    int maxSubArray(vector<int>& nums) {
+        int start=0;
+        int end=nums.size()-1;
+        return divide(start,end,nums);
     }
 };
