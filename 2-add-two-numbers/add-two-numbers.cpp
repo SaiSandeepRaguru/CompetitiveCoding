@@ -56,19 +56,6 @@ public:
         }
         return res;
     }
-    ListNode* reverse(ListNode* head){
-        if(head==nullptr || head->next==nullptr){
-            return head;
-        }
-        ListNode* prev=nullptr,*curr=head,*next=head->next;
-        while(curr!=nullptr){
-            next=curr->next;
-            curr->next=prev;
-            prev=curr;
-            curr=next;
-        }
-        return prev;
-    }
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
         return addLists(l1,l2);
     }
