@@ -10,13 +10,11 @@ public:
         float fleet_speed = vp[0].second;
         for(int i=1;i<position.size();i++){
             //compare speeds
-            cout<<vp[i].second<<endl;
             if(vp[i].second > fleet_speed){
                 car_fleet_count++;
                 fleet_speed = vp[i].second;
             }
         }
         return car_fleet_count;
-        
     }
 };
