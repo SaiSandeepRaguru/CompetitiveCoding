@@ -10,7 +10,7 @@
  */
 class Solution {
 public:
-    ListNode* addLists(ListNode* l1, ListNode* l2) {
+    ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
         if(l1==nullptr){
             return l2;
         }
@@ -55,8 +55,5 @@ public:
             carry=sum/10;
         }
         return res;
-    }
-    ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
-        return addLists(l1,l2);
     }
 };
