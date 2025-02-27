@@ -16,7 +16,6 @@ public:
             return 0;
         }
         if(root->val>=maxi){
-            cout<<root->val<<endl;
             return 1+nodesWithGreaterThanMax(root->left,root->val)+nodesWithGreaterThanMax(root->right,root->val);
         }
         return nodesWithGreaterThanMax(root->left,maxi)+nodesWithGreaterThanMax(root->right,maxi);
