@@ -20,12 +20,6 @@ public:
         return false;
     }
     bool isValidBST(TreeNode* root) {
-        // if(root==nullptr){
-        //     return true;
-        // }
-        // if(root->left==nullptr && root->right==nullptr){
-        //     return true;
-        // }
         return isValidBST(root,LONG_MIN,LONG_MAX);
     }
 };
