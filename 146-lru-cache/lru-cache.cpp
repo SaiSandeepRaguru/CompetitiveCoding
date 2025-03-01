@@ -50,6 +50,18 @@ public:
         moveToHead(mp[key]);
         return;  
     }
+    ~LRUCache() {
+        // Delete all nodes in the linked list
+        Node* curr = head;
+        while (curr) {
+            Node* temp = curr;
+            curr = curr->next;
+            delete temp;
+        }
+        // Clear the hash map
+        mp.clear();
+    }
+
 private:
     void insertAtHead(Node* node){
         node->next = head->next; //head should be always dummy;
