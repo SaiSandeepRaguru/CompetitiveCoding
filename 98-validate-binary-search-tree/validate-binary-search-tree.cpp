@@ -15,9 +15,9 @@ public:
         if(root==nullptr){
             return true;
         }
-        if(root->val<maxi && root->val>mini)
-            return isValidBST(root->left,mini,root->val) && isValidBST(root->right,root->val,maxi);
-        return false;
+        if(root->val>=maxi || root->val<=mini)
+            return false;
+        return isValidBST(root->left,mini,root->val) && isValidBST(root->right,root->val,maxi);
     }
     bool isValidBST(TreeNode* root) {
         if(root==nullptr){
