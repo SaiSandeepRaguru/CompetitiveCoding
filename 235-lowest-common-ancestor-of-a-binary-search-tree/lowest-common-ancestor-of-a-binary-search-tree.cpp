@@ -21,6 +21,6 @@ public:
             if(pval<val) cur=cur->left; 
             else cur = cur->right;
         }
-        return cur;
+        return nullptr;
     }
 };
