@@ -18,7 +18,7 @@ public:
             if(val==pval || val==qval || (val>pval && val<qval) || (val<pval && val>qval)){
                 return cur;
             }
-            else if(pval<val) cur=cur->left; //which automatically implies qval<val
+            if(pval<val) cur=cur->left; 
             else cur = cur->right;
         }
         return nullptr;
