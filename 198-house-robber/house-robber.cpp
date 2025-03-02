@@ -5,19 +5,11 @@ public:
         if(n==1){
             return a[0];
         }
-        if(n==2){
-            return max(a[0],a[1]);
-        }
-        if(n==3){
-            return max(a[0]+a[2],a[1]);
-        }
-        int first=a[0],second=a[1],third=a[0]+a[2],res=max(first,max(second,third));
-        for(int i=3;i<n;i++){
-            int temp = a[i]+max(first,second);
-            first=second;
-            second=third;
-            third=temp;
-            res=max(res,temp);
+        int prev2=0,prev1=0,res=0;
+        for(int x: a){
+            res=max(prev2+x,prev1);
+            prev2=prev1;
+            prev1=res;
         }
         return res;
     }
