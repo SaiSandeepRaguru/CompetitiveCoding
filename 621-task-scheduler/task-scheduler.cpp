@@ -27,12 +27,7 @@ public:
             while(!q.empty()){
                 pq.push(q.front()); q.pop();
             }
-            if(pq.size()==0){
-                res+=size; break;
-            }
-            else{
-            res+=interval;
-            }
+            res+=(pq.size()==0?size:interval);
         }
         return res;
     }
