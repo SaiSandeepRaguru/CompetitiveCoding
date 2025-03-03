@@ -1,7 +1,7 @@
 class Solution {
 public:
     unordered_map<int,vector<int>> mp;
-    bool dfs(int node,set<int> &visited){
+    bool dfs(int node,unordered_set<int> &visited){
         if(visited.find(node)!=visited.end()){
             return false;
         }
@@ -28,7 +28,7 @@ public:
                 mp[vt[0]].push_back(vt[1]);
             }
         }
-        set<int> visited;
+        unordered_set<int> visited;
         for(int i=0;i<numCourses;i++){
             bool result = dfs(i,visited);
                 if(result==false){
